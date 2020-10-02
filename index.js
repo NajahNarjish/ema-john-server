@@ -43,7 +43,7 @@ app.post("/productsByKeys", (req, res) => {
     productsCollection.find({key: { $in:productKeys }})
     .toArray((err, documents) =>{
         res.send (documents);
-        
+
     })
 })
 app.post("/addOrder", (req, res) => {
@@ -57,4 +57,4 @@ app.post("/addOrder", (req, res) => {
 });
 
 
-app.listen(port);
+app.listen(process.env.PORT || port);
